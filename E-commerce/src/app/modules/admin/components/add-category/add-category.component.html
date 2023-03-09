@@ -1,7 +1,7 @@
 <div style="height: 700px;;" class="row align-items-center">
     <div class="col-8">
 <form #form ="ngForm" (ngSubmit)="submit(form.value)">
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for=""><strong>Product name</strong></label>
       <input pattern="( [A-Z]+([ '-][a-zA-Z]+)* )" required="" #Pname="ngModel" name="Pname" ngModel type="text" class="form-control"  placeholder="Product Name">
       <div *ngIf="Pname.touched">
@@ -9,39 +9,42 @@
         <span *ngIf="Pname.errors?.['pattern']">invalid name</span>
       </div>
     
-    </div><br>
+    </div><br> -->
     <div class="form-group">
-      <label> <strong>category</strong></label>
-      <input pattern="( [A-Z]+([ '-][a-zA-Z]+)* )" required="" #category="ngModel" name="category" ngModel type="text" class="form-control"  placeholder="category">
+      <label> <strong>category Name</strong></label>
+      <input pattern="([a-zA-Z]+)* )" required="" #category="ngModel" name="category_name" ngModel type="text" class="form-control"  placeholder="category">
       <div *ngIf="category.touched">
         <span *ngIf="category.errors?.['required']">please enter the category</span>
         <span *ngIf="category.errors?.['pattern']">invalid name</span>
       </div>
     </div><br>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label><strong>Product No</strong></label>
         <input #Pno="ngModel"  name="Pno" ngModel required="" type="number" class="form-control"  placeholder="Product no">
         <div *ngIf="Pno.touched">
             <span *ngIf="Pno.errors?.['required']">please enter the Product number</span>
             
           </div>
-      </div><br>
+      </div><br> -->
+  
       <div class="form-group">
-        <label ><strong>Product Price</strong></label>
-        <input #Pprice="ngModel" name="Pprice" required="" ngModel type="number" class="form-control"  placeholder="Product price">
-        <div *ngIf="Pprice.touched">
-            <span *ngIf="Pprice.errors?.['required']">please enter the Product price</span>
-            
-          </div>
-      </div><br>
-      <div class="form-group">
-        <label ><strong>Product discription</strong></label>
-        <input #Pdis="ngModel" name="Pdis" required="" ngModel type="text" class="form-control"  placeholder="Product discription">
+        <label ><strong>Category discription</strong></label>
+        <input name="category_des" #Pdis="ngModel"  required="" ngModel type="text" class="form-control"  placeholder=" discription">
         <div *ngIf="Pdis.dirty">
-            <span *ngIf="Pdis.errors?.['required']">please enter the Product discription</span>
+            <span *ngIf="Pdis.errors?.['required']">please enter the Category discription</span>
             
           </div>
       </div><br>
+
+      <div class="form-group">
+        <label ><strong>Category image</strong></label>
+        <input name="category_image" #Cimage="ngModel" (change)="onImageChanged($event)" required="" ngModel type="file" class="form-control"  placeholder=" discription">
+        <div *ngIf="Cimage.dirty">
+            <span *ngIf="Cimage.errors?.['required']">please enter the Category discription</span>
+            
+          </div>
+      </div><br>
+
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>

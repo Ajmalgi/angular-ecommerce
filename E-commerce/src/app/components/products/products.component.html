@@ -3,97 +3,22 @@
 <div class="container">
 <div class="row">
     <h2>products</h2>
-    <div class="col-lg-4 mt-5">
-        <img  class="thumbnail" src="/assets/products/w1.jpg">
+    <div *ngFor="let product of products" class="col-lg-4 mt-5">
+        <img  class="thumbnail" src="http://127.0.0.1:8000/{{product['product_image']}}">
         <div class="box-element product">
-            <h6><strong>Seller Name :</strong></h6>
-            <h6><strong>Product Name :</strong></h6>
-            <h6><strong>Product Price :</strong></h6>
+            <h6><strong>Product Name : {{product.product_name}}</strong></h6>
             <hr>
 
             
-            <a class="btn btn-outline-success" >View</a>
-            <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
+            <a class="btn btn-outline-success" [routerLink]="['/products', product.id]" >View</a>
+            <h4 style="display: inline-block; float: right"><strong>{{product['price']}}$</strong></h4>
 
         </div>
     </div>
 
-    <div class="col-lg-4 mt-5">
-        <img class="thumbnail" src="\assets\products\w2.jpg">
-        <div class="box-element product">
-            <h6><strong>Seller Name :</strong></h6>
-            <h6><strong>Product Name :</strong></h6>
-            <h6><strong>Product Price :</strong></h6>
-            <hr>
-            
-           
-            <a class="btn btn-outline-success">View</a>
-            <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-            
-        </div>
-    </div>
-
-    <div class="col-lg-4 mt-5">
-        <img class="thumbnail" src="/assets/products/w4.jpg">
-        <div class="box-element product">
-            <h6><strong>Seller Name :</strong></h6>
-            <h6><strong>Product Name :</strong></h6>
-            <h6><strong>Product Price :</strong></h6>
-            <hr>
-
-            
-            <a class="btn btn-outline-danger" [routerLink]="['/products',1]">View</a>
-            <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-
-        </div>
-    </div>
+  
 </div>
-<div class="row" >
-    <div class="col-lg-4 mt-5">
-        <img class="thumbnail" src="/assets/products/w5.jpg">
-        <div class="box-element product">
-            <h6><strong>Seller Name : </strong></h6>
-            <h6><strong>Product Name :</strong></h6>
-            <h6><strong>Product Price :</strong></h6>
-            <hr>
 
-          
-            <a class="btn btn-outline-success">view</a>
-            <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-
-        </div>
-    </div>
-
-    <div class="col-lg-4 mt-5">
-        <img class="thumbnail" src="/assets/products/w6.jpg">
-        <div class="box-element product">
-            <h6><strong>Seller Name :</strong></h6>
-            <h6><strong>Product Name :</strong></h6>
-            <h6><strong>Product Price :</strong></h6>
-            <hr>
-            
-          
-            <a class="btn btn-outline-success">View</a>
-            <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-            
-        </div>
-    </div>
-
-    <div class="col-lg-4 mt-5">
-        <img class="thumbnail" src="/assets/products/w3.jpg">
-        <div class="box-element product">
-            <h6><strong>Seller Name :</strong></h6>
-            <h6><strong>Product Name :</strong></h6>
-            <h6><strong>Product Price :</strong></h6>
-            <hr>
-
-          
-            <a class="btn btn-outline-success" >View</a>
-            <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-
-        </div>
-    </div>
-</div>
 <br><br>
 </div>
 <app-footer></app-footer>

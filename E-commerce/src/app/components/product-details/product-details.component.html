@@ -2,17 +2,19 @@
 <p>product-details works!</p>
 <div class="row justify-content-center">
     <div class="col-lg-4 mt-5">
-        <img  class="thumbnail" src="/assets/products/w1.jpg">
+        <img  class="thumbnail" src="http://127.0.0.1:8000/{{product_deatails.product_image}}">
         <div class="box-element product">
-            <h6><strong>Seller Name :</strong></h6>
-            <h6><strong>Product Name :</strong></h6>
-            <h6><strong>Product Price :</strong></h6>
+            <h6><strong>Seller Name : {{product_deatails.seller.first_name}} {{product_deatails.seller.last_name}}</strong></h6>
+            <h6><strong>Product Name :  {{product_deatails.product_name}}</strong></h6>
+            <h6><strong>Product Price :  {{product_deatails.price |currency}}</strong></h6>
+            <h6><strong>Product description :  {{product_deatails.product_des}}</strong></h6>
             <hr>
 
             
-            <button class="btn btn-dark" [routerLink]="'/cart'" >Add to Cart</button>&nbsp;
-            <a class="btn btn-outline-success" >View</a>
-            <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
+            <button class="btn btn-dark" (click)="submit()">Add to Cart</button>&nbsp;
+            <p class="text-warning">{{msg}}</p>
+     
+            <h4 style="display: inline-block; float: right"><strong>${{product_deatails.price}}</strong></h4>
 
         </div>
     </div>

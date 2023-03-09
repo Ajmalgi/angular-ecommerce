@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div style="height:560px"  class="row align-items-center justify-content-center">
+        <div class="col-8">
+    <form #form="ngForm" (ngSubmit)="submit(form.value)" >
+        <div class="form-group">
+          <label for=""><strong>Email</strong></label>
+          <input name="email" ngModel  type="email" class="form-control"  placeholder="Email">
+          <!-- <div *ngIf="Pname.touched">
+            <span *ngIf="Pname.errors?.['required']">please enter the name</span>
+            <span *ngIf="Pname.errors?.['pattern']">invalid name</span>
+          </div> -->
+        </div><br>
+        <div class="form-group">
+          <label for=""><strong>password</strong></label>
+          <input ngModel  name="password" type="text" class="form-control"  placeholder="Password">
+        </div><br>
+        <div class="form-inline my-2 my-lg-0">
+          <button class="btn btn-info" >Login</button>
+        </div>
+        <br>
+    
+        <p class="text-info">didnt  have an account? &nbsp; <a class="text-decoration-none" [routerLink]="'/cust_reg'">signUp Now</a></p>
+    
+      
+    
+    </form>
+    </div>
+    </div>
+    </div>
+    <br>
+    <app-footer></app-footer>

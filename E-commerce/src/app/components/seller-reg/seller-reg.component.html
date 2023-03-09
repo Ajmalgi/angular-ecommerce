@@ -1,35 +1,38 @@
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand text-warning" >E-co</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="'/home'" >Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" [routerLink]="'/products'">Product</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" >Contact</a>
-          </li>
-        </ul>
-       
-
-      </div>
+  <div class="container-fluid">
+    <a class="navbar-brand text-warning" ><strong> E-co</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="'/home'" >Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="'/products'">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" [routerLink]="'/cust_profile'">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-warning active " aria-current="page"  [routerLink]="'/seller_reg'" >Be a seller</a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+  <br>
+  
   <div class="container  ">
 <div   class="row align-items-center justify-content-center">
     <div class="col-8">
-<form  (ngSubmit)="submit()">
+          {{ message }}
+<form [formGroup]="seller_reg" (ngSubmit)="submit()">
     <div class="form-group">
       <label for=""><strong>First Name</strong></label>
-      <input    type="text" class="form-control"  placeholder="First Name">
+      <input  formControlName="first_name"    type="text" class="form-control"  placeholder="First Name">
       <!-- <div *ngIf="Pname.touched">
         <span *ngIf="Pname.errors?.['required']">please enter the name</span>
         <span *ngIf="Pname.errors?.['pattern']">invalid name</span>
@@ -37,58 +40,61 @@
     </div><br>
     <div class="form-group">
       <label for=""><strong>Last Name</strong></label>
-      <input  type="text" class="form-control"  placeholder="Last Name">
+      <input formControlName="last_name"   type="text" class="form-control"  placeholder="Last Name">
    
     
     </div><br>
     <div class="form-group">
         <label><strong>Email</strong></label>
-        <input     type="email" class="form-control"  placeholder="Email">
+        <input formControlName="email"    type="text" class="form-control"  placeholder="Email">
+        <span *ngIf="seller_reg.get('email')?.hasError('emailexist')">email already exist</span>
       </div><br>
 
     
     <div class="form-group">
       <label> <strong>Phone Number</strong></label>
-      <input type="number" class="form-control"  placeholder="Phone Number">
+      <input formControlName="phone"  type="number" class="form-control"  placeholder="Phone Number">
       
     </div><br>
 
     <div class="form-group">
         <label><strong>Address</strong></label>
-        <textarea class="form-control"  placeholder="Address"></textarea>
+        <textarea  formControlName="address"  class="form-control"  placeholder="Address"></textarea>
     </div><br>
 
       <div class="form-group">
         <label ><strong>Bank Name</strong></label>
-        <input  type="text" class="form-control"  placeholder="Bank Name">
+        <input  formControlName="bank_name"  type="text" class="form-control"  placeholder="Bank Name">
     
       </div><br>
       <div class="form-group">
         <label ><strong>Bank Branch</strong></label>
-        <input  type="text" class="form-control"  placeholder="Bank Branch">
+        <input   formControlName="branch"  type="text" class="form-control"  placeholder="Bank Branch">
     
       </div><br>
       <div class="form-group">
         <label ><strong>IFSC</strong></label>
-        <input  type="number" class="form-control"  placeholder="IFSC">
+        <input  formControlName="ifsc"  type="number" class="form-control"  placeholder="IFSC">
       
       </div><br>
 
       <div class="form-group">
         <label ><strong>Account Number</strong></label>
-        <input  type="number" class="form-control"  placeholder="Account Number">
+        <input  formControlName="account_no"  type="number" class="form-control"  placeholder="Account Number">
       
       </div><br>
       <div class="form-group">
         <label ><strong>Seller Pic</strong></label>
-        <input  type="file" class="form-control"  placeholder="Seller Pic">
+        <input (change)="onImageChanged($event)"  formControlName="seller_pic"   type="file" class="form-control"  placeholder="Seller Pic">
       
       </div><br>
-    <div class="form-check">
+    <!-- <div class="form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div><br>
+    </div><br> -->
     <button type="submit" class="btn btn-warning">Submit</button>
+    <br><br>
+    <a class="text-decoration-none" [routerLink]="'/seller_login'">alredy have an account?</a>
   </form>
 </div>
 </div>

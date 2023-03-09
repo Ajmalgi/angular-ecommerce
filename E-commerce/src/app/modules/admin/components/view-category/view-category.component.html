@@ -1,0 +1,19 @@
+<br><br><br><br>
+<table class="table table-striped mt-5">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Category name</th>
+        <th scope="col">C-description</th>
+        <th scope="col">C-image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let items of catogery">
+        <th scope="row">1</th>
+        <td>{{items.category_name}}</td>
+        <td>{{items.category_des}}</td>
+        <td><img style="width:70px; height: 50px;"  src="http://127.0.0.1:8000/{{items.category_image}}" alt=""> </td>
+      </tr>
+    </tbody>
+  </table>

@@ -9,12 +9,18 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CHomeComponent } from './components/c-home/c-home.component';
-import { AdminModule } from './modules/admin/admin.module';
-import { SellerModule } from './modules/seller/seller.module';
 import { PageNotfoundComponent } from './components/page-notfound/page-notfound.component';
 import { SellerRegComponent } from './components/seller-reg/seller-reg.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SellerLoginComponent } from './components/seller-login/seller-login.component';
+import { CusLoginComponent } from './components/cus-login/cus-login.component';
+import { CusRegComponent } from './components/cus-reg/cus-reg.component';
+import { CusProfileComponent } from './components/cus-profile/cus-profile.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TestingComponent } from './components/testing/testing.component';
+import { ZipcodeComponent } from './components/zipcode/zipcode.component'
+
+
 
 
 
@@ -31,23 +37,31 @@ import { SellerLoginComponent } from './components/seller-login/seller-login.com
     PageNotfoundComponent,
     SellerRegComponent,
     SellerLoginComponent,
+    CusLoginComponent,
+    CusRegComponent,
+    CusProfileComponent,
+    TestingComponent,
+    ZipcodeComponent,
+    
+    
+
+  
    
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule,
+    HttpClientModule,
     
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
 
   ],
 
   providers: [],
-  exports:[
-    FooterComponent
-   ],
+ 
 
   bootstrap: [AppComponent]
 })

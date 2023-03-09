@@ -1,0 +1,28 @@
+
+<h1 class="text-center">Update Stock</h1>
+
+<br><br><br><br>
+<table class="table table-striped mt-5">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">product pic</th>
+        <th scope="col">P-name</th>
+        <th scope="col">Current Stock</th>
+        <th scope="col">Update Stock</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of s_products; let i = index" >
+        <td>{{i+1}}</td>
+        <td id="imgtd"><img id="product_im
+          age" src="http://127.0.0.1:8000/{{product.product_image}}"></td>
+        <td>{{product.product_name}}</td>
+        <td>{{product.stock}}</td>
+        <td><input   #input="ngModel"  class="mt-2" #update_stock="ngModel" ngModel id="updatestock" min="0" type="number"></td>
+          <td style="display: none;"><input  #input1 value="{{product.id}}" type="text"></td>
+         <td><button  (click)="submit(input.value,input1.value)" type="submit" class="btn btn-danger">update</button></td>
+      </tr>
+    </tbody>
+  </table>

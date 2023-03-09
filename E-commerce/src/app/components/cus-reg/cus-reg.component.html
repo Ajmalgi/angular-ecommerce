@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div   class="row align-items-center justify-content-center">
+        <div class="col-8">
+          {{ message }}
+    <form #form="ngForm" (ngSubmit)="submit(form.value)" >
+        <div class="form-group">
+          <label for=""><strong>First Name</strong></label>
+          <input ngModel name="first_name"     type="text" class="form-control"  placeholder="First Name">
+          <!-- <div *ngIf="Pname.touched">
+            <span *ngIf="Pname.errors?.['required']">please enter the name</span>
+            <span *ngIf="Pname.errors?.['pattern']">invalid name</span>
+          </div> -->
+        </div><br>
+        <div class="form-group">
+          <label for=""><strong>Last Name</strong></label>
+          <input ngModel name="last_name" type="text" class="form-control"  placeholder="Last Name">
+       
+        
+        </div><br>
+        <div class="form-group">
+            <label><strong>Email</strong></label>
+            <input  ngModel name="email"     type="email" class="form-control"  placeholder="Email">
+          </div><br>
+    
+        
+        <div class="form-group">
+          <label> <strong>Phone Number</strong></label>
+          <input ngModel name="phone"  type="number" class="form-control"  placeholder="Phone Number">
+          
+        </div><br>
+    
+        <div class="form-group">
+            <label><strong>Address</strong></label>
+            <textarea ngModel name="address"  class="form-control"  placeholder="Address"></textarea>
+        </div><br>
+    
+          <div class="form-group">
+            <label ><strong>Password</strong></label>
+            <input ngModel name="password"   type="password" class="form-control"  placeholder="Password">
+        
+          </div><br>
+        
+          <div class="form-group">
+            <label ><strong>Customer Pic</strong></label>
+            <input  ngModel name="customer_pic" (change)="onImageChanged($event)"  type="file" class="form-control"  placeholder="Customer Pic">
+          
+          </div><br>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div><br>
+        <button type="submit" class="btn btn-warning">Submit</button>
+      </form>
+    </div>
+    </div>
+    </div>
+    <br>
+    <app-footer></app-footer>

@@ -6,8 +6,16 @@ import { SellerComponent } from './seller.component';
 import { SHomeComponent } from './components/s-home/s-home.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { FormsModule } from '@angular/forms';
-import { FooterComponent } from 'src/app/components/footer/footer.component';
 import { SNavbarComponent } from './components/s-navbar/s-navbar.component';
+import { ViewOrdersComponent } from './components/view-orders/view-orders.component';
+import { UpdateStockComponent } from './components/update-stock/update-stock.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
+
+
+
+
+
+
 
 
 
@@ -18,8 +26,10 @@ import { SNavbarComponent } from './components/s-navbar/s-navbar.component';
     SellerComponent,
     SHomeComponent,
     AddProductComponent,
-    FooterComponent,
-    SNavbarComponent
+    SNavbarComponent,
+    ViewOrdersComponent,
+    UpdateStockComponent,
+    ChangePasswordComponent,
    
   
   ],

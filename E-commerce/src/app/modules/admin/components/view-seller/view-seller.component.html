@@ -1,0 +1,28 @@
+
+<br><br><br><br>
+<table class="table table-striped mt-5">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Address</th>
+        <th scope="col">Status</th>
+        <th scope="col">image</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let seller of seller_details">
+        <th scope="row">1</th>
+        <td>{{seller.first_name}} {{seller.last_name}}</td>
+        <td>{{seller.email}}</td>
+        <td>{{seller.phone}}</td>
+        <td>{{seller.address}}</td>
+        <td [ngClass]="{'text-danger': seller.status === 'REJECTED', 'text-success': seller.status === 'APPROVED'}">{{seller.status}}</td>
+        <td><img style="height:50px;width:50px" src="http://127.0.0.1:8000/{{seller.seller_pic}}" alt=""></td>
+        
+      </tr>
+    </tbody>
+  </table>

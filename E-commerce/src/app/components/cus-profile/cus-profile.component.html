@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+<section style="background-color: #eee;">
+    <div class="container py-5">
+      <form class="py-4" method="POST">
+      <div class="row">
+        <div class="col">
+          <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+            
+             
+              <h3 class="breadcrumb-item active" aria-current="page">Customer Profile</h3>
+         
+          </nav>
+        </div>
+      </div>
+  
+      <div class="row">
+       
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <img src="http://127.0.0.1:8000/{{cdetails[0]['customer_pic']}}" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+              <h5 class="my-3">{{cdetails[0]['first_name']+' '+cdetails[0]['last_name']}}</h5>
+              <p class="text-muted">{{cdetails[0]['email']}}</p>
+              <!-- <p class="text-muted mb-1">Full Stack Developer</p>
+              <p class="text-muted mb-4">Bay Area, San Francisco, CA</p> -->
+             
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-lg-8">
+          <div class="card mb-4">
+           
+            <div class="card-body">
+              
+                
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Full Name</p>
+                </div>
+                <div class="col-sm-9">
+                    <input  class="border-0" [disabled]="inptag" type="text" name="name"  value="{{cdetails[0]['first_name']+' '+cdetails[0]['last_name']}}"> 
+                </div>
+              </div>
+             
+              <div class="row">
+                <!-- <div class="col-sm-3">
+                  <p class="mb-0">Email</p>
+                </div> -->
+                
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Phone</p>
+                </div>
+                <div class="col-sm-9">
+                  <input class="border-0" name="phone"type="number" [disabled]="inptag" value="{{cdetails[0]['phone']}}">
+                </div>
+              </div>
+              
+            
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Address</p>
+                </div>
+                <div class="col-sm-9">
+                  <input class="border-0"name="address" [disabled]="inptag" value="{{cdetails[0]['address']}}">
+                </div>
+              </div>
+            
+            </div>
+           
+         
+          </div>
+          
+        </div>
+        </div>
+        <div class="d-flex justify-content-center mb-1">
+          
+            <a id="btnedit" class="btn btn-primary"  (click)="btnedit()" >Edit</a>
+            <button type="submit" [disabled]="subbtn" class="btn btn-danger"> Submit</button>        
+          </div>
+          <span class="success text-center"></span>
+        </form>
+      </div>
+      
+  </section>
+ 
+  <app-footer></app-footer>
